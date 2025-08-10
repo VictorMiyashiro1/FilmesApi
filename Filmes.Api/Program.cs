@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(o =>
 
 
 builder.Services.AddCors(o => o.AddPolicy("Front", p =>
-    p.WithOrigins("http://localhost:4200", "https://victormiyashiro1.github.io/filme-front/filmes")
+    p.WithOrigins("http://localhost:4200", "https://victormiyashiro1.github.io")
      .AllowAnyHeader().AllowAnyMethod()));
 
 builder.Services.AddControllers();
