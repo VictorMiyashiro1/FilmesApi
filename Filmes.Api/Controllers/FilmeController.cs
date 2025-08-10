@@ -16,6 +16,19 @@ namespace Filmes.Api.Controllers
         public async Task<ActionResult<IEnumerable<Filme>>> GetAll()
             => Ok(await _db.Filmes.AsNoTracking().OrderByDescending(m => m.Id).ToListAsync());
 
+        [HttpGet("total-likes")]
+        public async Task<ActionResult<int>> GetTotalLikes()
+        {
+            var totalLikes = await _db.Filmes.SumAsync(f => f.Likes);
+            return Ok(totalLikes);
+        }
+
+        [HttpGet("total-dislikes")]
+        public async Task<ActionResult<int>> GetTotalDislikes()
+        {
+            var totalDislikes = await _db.Filmes.SumAsync(f => f.Dislikes);
+            return Ok(totalDislikes);
+        }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Filme>> GetById(int id)
         {
