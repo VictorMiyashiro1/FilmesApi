@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "+xeXUQkb6747HY9wtDZxIh18YJqAeKPtc8dhKnr4k8I=",
+  "Hash": "aWGZnEJI84ZABgOLoXMGPqpFmbrNNS6kmc8PdqDJOxQ=",
   "Source": "Filmes.Api",
   "BasePath": "_content/Filmes.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

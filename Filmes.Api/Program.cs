@@ -12,10 +12,9 @@ builder.Services.AddSwaggerGen();
 
 
 
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("DevCors", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-});
+builder.Services.AddCors(o => o.AddPolicy("Front", p =>
+    p.WithOrigins("http://localhost:4200", "https://seuusuario.github.io")
+     .AllowAnyHeader().AllowAnyMethod()));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -42,6 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("Front");
 
 app.UseAuthorization();
 
