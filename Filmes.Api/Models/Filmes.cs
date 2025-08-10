@@ -6,22 +6,19 @@ namespace Filmes.Api.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(200)]
+        [Required]
         public string Title { get; set; } = string.Empty;
 
-        [Required, StringLength(100)]
+        [Required]
         public string Genre { get; set; } = string.Empty;
 
-        [StringLength(2000)]
         public string? Description { get; set; }
 
-        [Url, StringLength(1000)]
+        [Required]
         public string? ImageUrl { get; set; }
 
-        [Range(0, int.MaxValue)]
         public int Likes { get; set; }
 
-        [Range(0, int.MaxValue)]
         public int Dislikes { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
